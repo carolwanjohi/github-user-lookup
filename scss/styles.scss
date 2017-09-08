@@ -7,7 +7,14 @@ $fontStyle1 :'Orbitron', sans-serif;
     background-color: $white; 
     font-family: $fontStyle1;
 }
+
 /* Style section5 */
 .section5 {
     display: none;
+    height: 5vh;
+    #showRepoInfo{
+        height: 40vh;
+        overflow: scroll;
+    }   
 }
+
