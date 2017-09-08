@@ -4,8 +4,6 @@ var apiKey = require('./../.env').apiKey;
 function Repos() {}
 
 Repos.prototype.getRepos = function(userInfo, displayFunction){
-    // Debugger  
-    console.log('Are you ready to look-up');
 
   $.get('https://api.github.com/users/' + userInfo + 
     '?access_token=' + apiKey
@@ -21,7 +19,6 @@ Repos.prototype.getRepos = function(userInfo, displayFunction){
 
   $.get('https://api.github.com/users/' + userInfo + 
     '/repos?access_token=' + apiKey).then(function(response){
-
 
         for (var index = 0; index <= response.length; index++ ) {
 

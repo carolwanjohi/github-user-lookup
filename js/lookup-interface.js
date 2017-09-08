@@ -7,6 +7,7 @@ var displayUserName = function(nameData) {
     $('#showUserInfo').append("<h3>The user's name is " + nameData + ". </h3> <h2> Public Repositories</h2>");
   }
 };
+
 // var displayRepoName = function(repoNameData) {
 //   if (nameData === null) {
 //     alert("The username does not exist. Try again.");
@@ -19,9 +20,6 @@ $(document).ready( function() {
 
     var currentReposObject = new Repos();
 
-    // Debugger
-    console.log('I am batman');
-
     $('#usernameForm').submit( function(event){
 
         // Clear the info currently displayed 
@@ -31,21 +29,13 @@ $(document).ready( function() {
 
         event.preventDefault();
 
-        // Debugger
-        console.log('I am groot');
-
         var userInfo = $('#username').val();
 
         // Clear form input field
         $('#username').val("");
 
-        // Get user information
+        // Get user full name and display
         currentReposObject.getRepos(userInfo, displayUserName);
 
-        // Debugger
-        console.log(userInfo);
-
-        // Display user information 
-        // $('#showUserInfo').text(userInfo);
     });
 });
