@@ -39,10 +39,9 @@ No known bugs
 ## Technologies Used
 
 - HTML
-- CSS
-- JAVASCRIPT
-- BOOTSTRAP
-- JQUERY
+- SCSS
+- Node packages
+- Bower packages
 
 ### License
 
