@@ -7,22 +7,40 @@ var apiKey = require('./../.env').apiKey;
 function Repos() {}
 
 Repos.prototype.getRepos = function(userInfo, displayFunction){
-    // Debugger  
-    console.log('Are you ready to look-up');
 
   $.get('https://api.github.com/users/' + userInfo + 
     '?access_token=' + apiKey
     ).then(function(response){
-        // Debugger
-        console.log(response.name);
 
         // Display's user's info
         displayFunction(response.name);
+
     }).fail(function(error){
-        // Debugger
-        console.log(error.responseJSON.message);
-        
+        // Display error message when an error is encountered
         $('#showUserInfo').append(error.responseJSON.message);
+    });
+
+  $.get('https://api.github.com/users/' + userInfo + 
+    '/repos?access_token=' + apiKey).then(function(response){
+
+        for (var index = 0; index <= response.length; index++ ) {
+
+            // Check if a repo has a description and display
+            if( response[index].description === null) {
+                $('#showRepoInfo').append("<li> <h5>Repo name: " + response[index].name + ". </h5> <p> This repo has no description </p> </li>");
+            } else {
+
+                $('#showRepoInfo').append("<li> <h5>Repo name: " + response[index].name + ". </h5> <p>" + response[index].description + "</p> </li>"); 
+            }
+        }
+
+    }).fail(function(error){
+        // Currently producing an error on the console, to be fixed
+
+        // Debugger
+        // console.log(error.responseJSON.message);
+        
+        // $('#showUserInfo').append(error.responseJSON.message);
     });
 };
 
@@ -30,44 +48,43 @@ exports.reposModule = Repos;
 },{"./../.env":1}],3:[function(require,module,exports){
 var Repos = require('./../js/lookup.js').reposModule;
 
-var displayUserInfo = function(nameData) {
+var displayUserName = function(nameData) {
   if (nameData === null) {
     alert("The username does not exist. Try again.");
   } else {
-    $('#showUserInfo').append("<p>The user's name is " + nameData + ". </p>");
+    $('#showUserInfo').append("<h3>The user's name is " + nameData + ". </h3> <h2> Public Repositories</h2>");
   }
 };
+
+// var displayRepoName = function(repoNameData) {
+//   if (nameData === null) {
+//     alert("The username does not exist. Try again.");
+//   } else {
+//     $('#showUserInfo').append("<p>The user's name is " + nameData + ". </p>");
+//   }
+// };
 
 $(document).ready( function() {
 
     var currentReposObject = new Repos();
 
-    // Debugger
-    console.log('I am batman');
-
     $('#usernameForm').submit( function(event){
 
         // Clear the info currently displayed 
         $('#showUserInfo').empty();
+        $('#showRepoInfo').empty();
+        $('.section5').show();
 
         event.preventDefault();
-
-        // Debugger
-        console.log('I am groot');
 
         var userInfo = $('#username').val();
 
         // Clear form input field
         $('#username').val("");
 
-        // Get user information
-        currentReposObject.getRepos(userInfo, displayUserInfo);
+        // Get user full name and display
+        currentReposObject.getRepos(userInfo, displayUserName);
 
-        // Debugger
-        console.log(userInfo);
-
-        // Display user information 
-        // $('#showUserInfo').text(userInfo);
     });
 });
 },{"./../js/lookup.js":2}]},{},[3]);
