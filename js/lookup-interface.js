@@ -1,12 +1,19 @@
 var Repos = require('./../js/lookup.js').reposModule;
 
-var displayUserInfo = function(nameData) {
+var displayUserName = function(nameData) {
   if (nameData === null) {
     alert("The username does not exist. Try again.");
   } else {
-    $('#showUserInfo').append("<p>The user's name is " + nameData + ". </p>");
+    $('#showUserInfo').append("<h3>The user's name is " + nameData + ". </h3> <h2> Public Repositories</h2>");
   }
 };
+// var displayRepoName = function(repoNameData) {
+//   if (nameData === null) {
+//     alert("The username does not exist. Try again.");
+//   } else {
+//     $('#showUserInfo').append("<p>The user's name is " + nameData + ". </p>");
+//   }
+// };
 
 $(document).ready( function() {
 
@@ -19,6 +26,8 @@ $(document).ready( function() {
 
         // Clear the info currently displayed 
         $('#showUserInfo').empty();
+        $('#showRepoInfo').empty();
+        $('.section5').show();
 
         event.preventDefault();
 
@@ -31,7 +40,7 @@ $(document).ready( function() {
         $('#username').val("");
 
         // Get user information
-        currentReposObject.getRepos(userInfo, displayUserInfo);
+        currentReposObject.getRepos(userInfo, displayUserName);
 
         // Debugger
         console.log(userInfo);
