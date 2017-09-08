@@ -19,7 +19,7 @@ $(document).ready( function() {
         $('#username').val("");
 
         // Get user information
-        currentReposObject.getRepos();
+        currentReposObject.getRepos(userInfo);
 
         // Debugger
         console.log(userInfo);
