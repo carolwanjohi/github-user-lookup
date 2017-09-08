@@ -50,7 +50,7 @@ var Repos = require('./../js/lookup.js').reposModule;
 
 var displayUserName = function(nameData) {
   if (nameData === null) {
-    alert("The username does not exist. Try again.");
+    $('#showUserInfo').append("<hr/> <h3>The user has no name.</h3> <hr/> <h2> Public Repositories</h2>");
   } else {
     $('#showUserInfo').append("<hr/> <h3>The user's name is " + nameData + ". </h3> <hr/> <h2> Public Repositories</h2>");
   }
