@@ -1,4 +1,13 @@
-// Style section5
+$white : #EBF5FB ;
+$fontStyle1 :'Orbitron', sans-serif;
+
+/* Style section1*/
+.section1 {
+    text-align: center;
+    background-color: $white; 
+    font-family: $fontStyle1;
+}
+/* Style section5 */
 .section5 {
     display: none;
 }
