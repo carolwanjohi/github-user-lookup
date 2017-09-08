@@ -1,10 +1,10 @@
 # Github User Lookup
-## This is a website where users can search for a GitHub username and see the name and description of that person's public repository, 08/09/2017
+## This is a website where users can search for a GitHub username and see the user's name and the names and descriptions of that person's public repositories., 08/09/2017
 
 ## By **[Carol Wanjohi](https://github.com/carolwanjohi)**
 
 ## Description
-[This](https://carolwanjohi.github.io/github-user-lookup/) is a website where users can search for a GitHub username and see the name and description of that person's public repository.
+[This](https://carolwanjohi.github.io/github-user-lookup/) is a website where users can search for a GitHub username and see the user's name and the names and descriptions of that person's public repositories.
 
   ## How GitHub User Lookup Works
 | Behavior        | Input           | Outcome  |
