@@ -1,5 +1,13 @@
 var Repos = require('./../js/lookup.js').reposModule;
 
+var displayUserInfo = function(nameData) {
+  if (nameData === null) {
+    alert("The username does not exist. Try again.");
+  } else {
+    $('#showUserInfo').append("<p>The user's name is " + nameData + ". </p>");
+  }
+};
+
 $(document).ready( function() {
 
     var currentReposObject = new Repos();
@@ -8,6 +16,10 @@ $(document).ready( function() {
     console.log('I am batman');
 
     $('#usernameForm').submit( function(event){
+
+        // Clear the info currently displayed 
+        $('#showUserInfo').empty();
+
         event.preventDefault();
 
         // Debugger
@@ -19,12 +31,12 @@ $(document).ready( function() {
         $('#username').val("");
 
         // Get user information
-        currentReposObject.getRepos(userInfo);
+        currentReposObject.getRepos(userInfo, displayUserInfo);
 
         // Debugger
         console.log(userInfo);
 
         // Display user information 
-        $('#showUserInfo').text(userInfo);
+        // $('#showUserInfo').text(userInfo);
     });
 });
