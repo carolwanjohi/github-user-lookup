@@ -19,10 +19,17 @@
 
 This requires internet connection.
 
-You can also clone this repo. If you do so you will require to get an Access Token from GitHub.
+You can also clone this repo. If you do so you will require to get an Access Token from GitHub and **place the Access Token in a .env file**.
 
-### How to get a GitHub Access Token
+### Creating Personal Access Tokens
+* Visit the _Settings_ area of your GitHub account.
+* Select Personal Access Tokens from the sidebar, and hit Generate New Token.
+* GitHub will offer a list of options **Do not select any**. These grant read/write permissions and access to personal data. Finally, select **Generate Token**. 
 
+### Setup Instructions
+* Place your token in the **.env file** at the top level of your directory. 
+* Create a .gitignore file.
+* Include .env in .gitignore.
 
 ## Known Bugs
 
