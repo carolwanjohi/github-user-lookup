@@ -9,7 +9,8 @@
 ## How Pig Dice Works
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
-| Display name | daneden | Details about GitHub username daneden  |
+| Display name | GitHub username | Name of the GitHub username |
+| Display repo name and description| GitHub username | A list of repo names and description of repos |
 
 ## Setup/Installation Requirements
 
@@ -19,7 +20,7 @@
 
 This requires internet connection.
 
-You can also clone this repo. If you do so you will require to get an Access Token from GitHub and **place the Access Token in a .env file**.
+* You can also clone this repo. If you do so you will require to get an Access Token from GitHub and **place the Access Token in a .env file**.
 
 ### Creating Personal Access Tokens
 * Visit the _Settings_ area of your GitHub account.
