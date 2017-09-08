@@ -6,7 +6,7 @@
 ## Description
 [This](https://carolwanjohi.github.io/github-user-lookup/) is a website where users can search for a GitHub username and see the name and description of that person's public repository.
 
-## How Pig Dice Works
+  ## How GitHub User Lookup Works
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
 | Display name | GitHub username | Name of the GitHub username |
