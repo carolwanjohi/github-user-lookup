@@ -52,7 +52,7 @@ var displayUserName = function(nameData) {
   if (nameData === null) {
     alert("The username does not exist. Try again.");
   } else {
-    $('#showUserInfo').append("<h3>The user's name is " + nameData + ". </h3> <h2> Public Repositories</h2>");
+    $('#showUserInfo').append("<hr/> <h3>The user's name is " + nameData + ". </h3> <hr/> <h2> Public Repositories</h2>");
   }
 };
 
