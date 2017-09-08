@@ -6,22 +6,37 @@ var apiKey = require('./../.env').apiKey;
 
 function Repos() {}
 
-Repos.prototype.getRepos = function(userInfo){
+Repos.prototype.getRepos = function(userInfo, displayFunction){
     // Debugger  
     console.log('Are you ready to look-up');
 
   $.get('https://api.github.com/users/' + userInfo + 
     '?access_token=' + apiKey
     ).then(function(response){
-        console.log(response);
+        // Debugger
+        console.log(response.name);
+
+        // Display's user's info
+        displayFunction(response.name);
     }).fail(function(error){
+        // Debugger
         console.log(error.responseJSON.message);
+        
+        $('#showUserInfo').append(error.responseJSON.message);
     });
 };
 
 exports.reposModule = Repos;
 },{"./../.env":1}],3:[function(require,module,exports){
 var Repos = require('./../js/lookup.js').reposModule;
+
+var displayUserInfo = function(nameData) {
+  if (nameData === null) {
+    alert("The username does not exist. Try again.");
+  } else {
+    $('#showUserInfo').append("<p>The user's name is " + nameData + ". </p>");
+  }
+};
 
 $(document).ready( function() {
 
@@ -31,6 +46,10 @@ $(document).ready( function() {
     console.log('I am batman');
 
     $('#usernameForm').submit( function(event){
+
+        // Clear the info currently displayed 
+        $('#showUserInfo').empty();
+
         event.preventDefault();
 
         // Debugger
@@ -42,13 +61,13 @@ $(document).ready( function() {
         $('#username').val("");
 
         // Get user information
-        currentReposObject.getRepos(userInfo);
+        currentReposObject.getRepos(userInfo, displayUserInfo);
 
         // Debugger
         console.log(userInfo);
 
         // Display user information 
-        $('#showUserInfo').text(userInfo);
+        // $('#showUserInfo').text(userInfo);
     });
 });
 },{"./../js/lookup.js":2}]},{},[3]);
