@@ -1,17 +1,27 @@
 $white : #EBF5FB ;
+$blue : #AED6F1 ;
 $fontStyle1 :'Orbitron', sans-serif;
+$fontStyle2 : font-family: 'Roboto Slab', serif;
 
 /* Style section1*/
 .section1 {
     text-align: center;
-    background-color: $white; 
+    background-color: $blue; 
     font-family: $fontStyle1;
 }
 
 /* Style section3*/
 .section3 {
     input {
-        max-width : 15vw;
+        max-width : 25vw;
+    }
+    #usernameButton {
+        margin-left: 0.75%;
+        background-color: $white;
+        padding-left: 4.25%;
+        padding-right: 4.25%;
+        border: 0.15em solid $blue;
+        border-radius: 0.5em;
     }
 }
 
