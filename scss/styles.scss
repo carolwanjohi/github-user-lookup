@@ -1,7 +1,7 @@
 $white : #EBF5FB ;
 $blue : #AED6F1 ;
 $fontStyle1 :'Orbitron', sans-serif;
-$fontStyle2 : font-family: 'Roboto Slab', serif;
+$fontStyle2 :'Roboto Slab', serif;
 
 /* Style section1*/
 .section1 {
@@ -10,17 +10,28 @@ $fontStyle2 : font-family: 'Roboto Slab', serif;
     font-family: $fontStyle1;
 }
 
+/* Style section2*/
+.section2 { 
+    font-family: $fontStyle2;
+} 
+
 /* Style section3*/
 .section3 {
+
+    font-family: $fontStyle2;
+    font-size: 1.5em;
+
     input {
         max-width : 25vw;
+        font-size: 0.75em;
     }
+
     #usernameButton {
         margin-left: 0.75%;
         background-color: $white;
         padding-left: 4.25%;
         padding-right: 4.25%;
-        border: 0.15em solid $blue;
+        border: 0.15em;
         border-radius: 0.5em;
     }
 }
