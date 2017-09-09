@@ -5,14 +5,18 @@ $fontStyle2 :'Roboto Slab', serif;
 
 /* Style section1*/
 .section1 {
+
     text-align: center;
     background-color: $blue; 
     font-family: $fontStyle1;
+
 }
 
 /* Style section2*/
 .section2 { 
+
     font-family: $fontStyle2;
+
 } 
 
 /* Style section3*/
@@ -36,13 +40,28 @@ $fontStyle2 :'Roboto Slab', serif;
     }
 }
 
+/* Style section4 */ 
+.section4 {
+
+    font-family: $fontStyle2; 
+}
+
+
 /* Style section5 */
 .section5 {
+
+    font-family: $fontStyle2;
     display: none;
     height: 5vh;
+
+    h5 {
+        font-size: 1.5em;
+    }
+
     #showRepoInfo{
         height: 40vh;
         overflow: scroll;
+        font-size: 1.25em;
     }   
 }
 
